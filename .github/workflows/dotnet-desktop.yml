@@ -6,7 +6,7 @@ env:
   Solution_Name: MU3Input.sln
   Project_Path: MU3Input/MU3Input.csproj
   Output_Directory: out
-  SolutionDir: .
+  SolutionDir: .\
 
 
 jobs:
