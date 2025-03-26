@@ -85,7 +85,7 @@ jobs:
     - name: Build DLL using MSBuild
       run: msbuild ${{ env.Project_Path }} /p:Configuration=Release /p:OutputPath=${{ env.Output_Directory }}
     - name: Upload DLL artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Built-DLL
         path: ${{ env.Output_Directory }}/*.dll
