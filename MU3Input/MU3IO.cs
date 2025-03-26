@@ -111,7 +111,7 @@ namespace MU3Input
             pos = IO.Lever;
         }
         
-        [DllExport(CallingConvention.Cdecl), ExportName = "mu3_io_led_init"]
+        [DllExport(CallingConvention.Cdecl, ExportName = "mu3_io_led_init")]
         public static void InitLed() {}
 
         [DllExport(CallingConvention.Cdecl, ExportName = "mu3_io_set_led")]
