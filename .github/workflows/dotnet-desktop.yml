@@ -2,6 +2,13 @@ name: Build DLL with MSBuild (.NET Framework 4.7.2)
 
 on: [push, pull_request]
 
+env:
+  Solution_Name: MU3Input.sln
+  Project_Path: MU3Input/MU3Input.csproj
+  Output_Directory: out
+  SolutionDir: .
+
+
 jobs:
   build:
     runs-on: windows-latest  # Windows 环境
@@ -28,7 +35,3 @@ jobs:
           name: Built-DLL
           path: ${{ env.Output_Directory }}/*.dll
 
-env:
-  Solution_Name: MU3Input.sln
-  Project_Path: MU3Input/MU3Input.csproj
-  Output_Directory: out
