@@ -36,7 +36,7 @@ jobs:
         run: choco install ilmerge -y
 
       - name: Merge DLL
-        run: ilmerge /out:build/MU3Input_merged.dll /target:library build/MU3Input.dll build/*.dll /wildcards /internalize /log
+        run: ilmerge /out:MU3Input/build/MU3Input_merged.dll /target:library MU3Input/build/MU3Input.dll MU3Input/build/*.dll /wildcards /internalize /log
 
       - name: Upload DLL artifact
         uses: actions/upload-artifact@v4
