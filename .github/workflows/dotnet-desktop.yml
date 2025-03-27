@@ -27,7 +27,7 @@ jobs:
         run: nuget restore ${{ env.Solution_Name }}
 
       - name: Build DLL using MSBuild
-        run: msbuild ${{ env.Project_Path }} /p:Configuration=Release /p:OutputPath=${{ env.Output_Directory }}
+        run: msbuild ${{ env.Project_Path }} /p:Configuration=Release /p:Platform=x64
  
       - name: Show path
         run: ls
