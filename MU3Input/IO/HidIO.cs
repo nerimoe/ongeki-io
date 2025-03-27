@@ -151,7 +151,7 @@ namespace MU3Input
             fixed (void* d = outBuffer)
                 Kernel32.CopyMemory(d, &led, 64);
 
-            _hid.Send(0, outBuffer, 64, 1000);
+            _hid.Send(0, 0, outBuffer, 64, 1000);
         }
 
     }
