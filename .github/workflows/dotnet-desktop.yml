@@ -33,5 +33,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Built-DLL
-          path: ${{ env.Output_Directory }}/*.dll
+          path: ${{ env.Output_Directory }}/*
 
