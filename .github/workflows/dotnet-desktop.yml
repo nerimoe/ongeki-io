@@ -27,11 +27,16 @@ jobs:
         run: nuget restore ${{ env.Solution_Name }}
 
       - name: Build DLL using MSBuild
-        run: msbuild ${{ env.Project_Path }} /p:Configuration=Release /p:Platform=x64
+        run: msbuild ${{ env.Project_Path }} /p:Configuration=Release /p:Platform=x64 /p:OutputPath=build
  
       - name: Show path
         run: ls
 
+      - name: Install ILMerge
+        run: choco install ilmerge -y
+
+      - name: Merge DLL
+        run: ilmerge /out:build/MU3Input_merged.dll /target:library build/MU3Input.dll build/*.dll /wildcards /internalize /log
 
       - name: Upload DLL artifact
         uses: actions/upload-artifact@v4
